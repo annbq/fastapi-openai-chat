@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standard]
+openai
+openai-agent  # SDK mới của OpenAI
+

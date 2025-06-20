@@ -1,0 +1,21 @@
+# Không commit file chứa API key
+.env
+
+# Thư mục biên dịch Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Thư viện cài bằng pip
+venv/
+env/
+.venv/
+
+# VSCode editor settings (tuỳ)
+.vscode/
+
+# macOS junk files
+.DS_Store
+
+# Log files (tuỳ)
+*.log
