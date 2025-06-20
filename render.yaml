@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: openai-chat-api
+    name: fastapi-openai-chat
     env: python
     region: singapore
     plan: free
