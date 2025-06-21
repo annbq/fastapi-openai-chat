@@ -35,4 +35,3 @@ async def chat_stream_gpt(message: str):
         delta = chunk.choices[0].delta.content
         if delta:
             yield delta
-    return StreamingResponse(chat_stream_gpt(), media_type="text/plain")
