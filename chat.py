@@ -1,6 +1,7 @@
 import os
 from openai import OpenAI, AsyncOpenAI
 from dotenv import load_dotenv
+from fastapi.responses import StreamingResponse
 
 
 load_dotenv()
@@ -34,3 +35,4 @@ async def chat_stream_gpt(message: str):
         delta = chunk.choices[0].delta.content
         if delta:
             yield delta
+    return StreamingResponse(chat_stream_gpt(), media_type="text/plain")
