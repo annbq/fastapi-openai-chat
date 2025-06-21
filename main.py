@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 from chat import chat_with_gpt
 
@@ -10,4 +11,7 @@ class ChatInput(BaseModel):
 @app.post("/chat")
 async def chat_endpoint(input: ChatInput):
     reply = await chat_with_gpt(input.message)
-    return {"reply": reply}
+    return JSONResponse(
+        content={"reply": reply},
+        media_type="application/json; charset=utf-8"
+    )
